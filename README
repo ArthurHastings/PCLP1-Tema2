@@ -1,0 +1,73 @@
+						--READ ME--
+						
+					      >>TEMA 2 PCLP1>>
+					    	
+
+Task 1
+
+	Citim numarul de numere notat cu "N" si verificam daca acesta este 0.
+Daca acesta este 0 atunci afisam numarul 0. Daca N nu este 0, atunci citim N
+numere reale, urmate de N-1 operatii de tipul +,-,*,/. La acest Task 1 nu
+conteaza ordinea operatilor, asa ca operatiile se fac in ordinea in care apar
+(NU tinem cont ca * si / au rang mai mare intr-o operatie).
+	Dupa ce citim numerele si operatiile si le punem in 2 vectori, unul pentru 
+operatii si unul pentru numere, parcurgem vectorul de operatii si luam o
+variabila reala "rezultat" care este initializat cu valoarea primului numar din
+vectorul de numere in care se stocheaza rezultatul din urma operatilor.(Ex: daca
+avem numerele 1 2 3 4 si operatiile +*- in variabila rezultat intai o sa avem
+primul numar din vectorul de numere adica 1, apoi o sa avem "rezultat + 2"
+adica 3 in variabila rezultat, dupa aceea o sa avem "rezultat * 3" adica 9 in
+rezultat si la sfarsit avem "rezultat / 4" adica 2.25 ).
+	La sfarsit afisam rezultatul operatiei ca numar real.
+
+Task 2
+	
+	Citim numarul de numere notat cu "N" si verificam daca acesta este 0.
+Daca acesta este 0 atunci afisam numarul 0. Daca N nu este 0, atunci citim N
+numere reale, urmate de N-1 operatii de tipul +,-,*,/. De aceasta data, la
+acest task, conteaza ordinea operatilor (adica "*" si "/" au prioritate), astfel
+trebuie intai sa rezolvam operatiile cu "*" si "/" si apoi rezolvam operatiile cu
+"+" si "-".
+	Incepem prin parcurgerea vectorului de operatii si cautam numai
+operatiile "*" si "-". La gasirea unei operatii de acest tip, rezultatul acesteia
+este salvat pe pozitia primului factor/deimpartit(Ex: daca avem numerele 1 2 3
+cu operatiile **, intai calculam 1 * 2 si rezultatul il punem in locul lui 1 in
+vector, vectorul de numere o sa arate astfel 2 3 si cel de operatii o sa arate
+astfel *).Pentru acest lucru ne trebuie 2 functii numite "stergere_operatie" si
+"stergere_operand", prima sterge o operatie care a fost efectuata din vectorul de
+operatii, iar a 2-a sterge un numar din vectorul de numere dupa ce operatia a
+fost facuta si pusa in locul primului numar din operatie.
+	Dupa ce acesti pasi au fost facuti, vectorul nostru de operatii o sa
+contina numai adunari(+) si scaderi(-) pentru ca inmultirile(*) si impartirile
+(/) au fost facute la pasul anterior. Tot ce urmeaza este ca programul sa repete
+pasii de mai sus pe vectorul de numere si vectorul de operatii modificat si
+rezultatul final se va gasi pe primul element din vectorul de operanzi.
+	Rezultatul final se va afisa ca numar real, acesta find singurul numar
+ramas din vectorul de numere.
+
+Task 3
+
+	Citim numarul de numere notat cu "N" si verificam daca acesta este 0.
+Daca acesta este 0 atunci afisam numarul 0. Daca N nu este 0, atunci citim N
+numere reale, urmate de N-1 operatii de tipul +,-,*,/,#. Acest task se rezolva
+la fel ca la task 2 doar ca se adauga o noua operatie, "#" aceasta operatie
+reprezinta "a # b = (a * b) * (a * b)" si are prioritate dupa inmultiri si
+impartiri, adica intai rezolvam inmultirile si impartirile, apoi operatia cu #
+si la sfarsit adunarile si scaderile ramase.
+	La fel ca la Task 2, incepem prin a parcurge vectorul de operatii in
+cautarea operatilor de tipul "*" si "/". Dupa ce acestea sunt gasite sunt
+rezolvate si rezultatul este pus la fel ca la Task 2 in locul primului factor, 
+urmat de stergerea unui element din vectorul de numere precum si din vectorul
+de operatii.
+	Apoi, parcurgem vectorul de numere si cautam operatii de tipul "#".
+Cand gasim operatii de acest tip calculam rezultatul pe care il punem in vectorul
+de numere tot in locul primului factor si stergem elementul din acest vector si
+din cel de operatii.
+	La sfarsit ramanem cu un vector de operatii exclusiv cu operatii de tip
+"+" si "-" la care la fel ca mai sus calculam rezultatul si il punem in vectorul
+de numere tot in locul primului factor si stergem elementul din acest vector si
+din cel de operatii.
+	Rezultatul final se va gasi pe prima pozitie din vectorul de numere
+acesta fiind si singurul numar ramas din acest vector pentru ca celelalte au fost
+sterse in urma operatiilor.
+
